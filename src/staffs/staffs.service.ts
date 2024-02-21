@@ -24,7 +24,7 @@ export class StaffsService {
           }
           return columnValue;
         }
-      }, async (error, result: Staff[]) => {
+      }, (error, result: Staff[]) => {
         let values = [];
 
         for (let i = 0; i < result.length; i++) {
@@ -33,12 +33,13 @@ export class StaffsService {
             isNaN(result[i].created_at.getTime())
           ) {
             resolve({ 'status': HttpStatus.BAD_REQUEST, 'response': `Invalid Data!!` })
+            return;
           }
           values.push([result[i].staff_pass_id, result[i].team_name, result[i].created_at])
         }
 
-        await this.dataSource.query(`TRUNCATE staffs`)
-        await this.dataSource.createQueryBuilder()
+        this.dataSource.query(`TRUNCATE staffs`)
+        this.dataSource.createQueryBuilder()
           .insert()
           .into("staffs")
           .values(result)
