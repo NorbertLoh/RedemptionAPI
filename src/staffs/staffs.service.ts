@@ -7,7 +7,6 @@ import { readFileSync } from 'fs'
 import { Staff } from './entities/staff.entity'
 import { parse } from 'csv-parse';
 
-import express = require("express");
 @Injectable()
 export class StaffsService {
   constructor(@InjectDataSource() private dataSource: DataSource) { }
