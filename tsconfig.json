@@ -16,11 +16,9 @@
     "noImplicitAny": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "types": ["Express", "Multer"]
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src/**/*",
-    ".d.ts",   // declaration file path
   ],
 }
