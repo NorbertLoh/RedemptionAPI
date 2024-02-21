@@ -28,10 +28,12 @@
     "@nestjs/swagger": "^7.3.0",
     "@nestjs/typeorm": "^10.0.2",
     "@types/express": "~4.17.3",
+    "@types/multer": "^1.4.11",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "csv-parse": "^5.5.3",
     "dotenv": "^16.4.4",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^3.9.1",
     "nest": "^0.1.6",
     "nest-csv-parser": "^2.0.4",
@@ -41,8 +43,7 @@
     "rxjs": "^7.8.1",
     "sequelize": "^6.37.1",
     "sequelize-typescript": "^2.1.6",
-    "typeorm": "^0.3.20",
-    "@types/multer": "^1.4.11"
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
