@@ -24,7 +24,7 @@ export class StaffsService {
           }
           return columnValue;
         }
-      }, (error, result: Staff[]) => {
+      }, async (error, result: Staff[]) => {
         let values = [];
 
         for (let i = 0; i < result.length; i++) {
@@ -37,13 +37,13 @@ export class StaffsService {
           values.push([result[i].staff_pass_id, result[i].team_name, result[i].created_at])
         }
 
-        this.dataSource.query(`
-        TRUNCATE staffs
-      `)
-        this.dataSource.query(`
-        INSERT ignore INTO staffs values?
-      `, [values])
-      resolve({ 'status': HttpStatus.CREATED, 'response': `Staffs added successfully!!`})
+        await this.dataSource.query(`TRUNCATE staffs`)
+        await this.dataSource.createQueryBuilder()
+          .insert()
+          .into("staffs")
+          .values(result)
+          .execute()
+        resolve({ 'status': HttpStatus.CREATED, 'response': `Staffs added successfully!!` })
       })
     })
   }
@@ -52,8 +52,9 @@ export class StaffsService {
     const result = await this.dataSource.query(`
         SELECT COUNT(staff_pass_id) As count
         FROM staffs
-        WHERE staff_pass_id = '${id}';
-      `)
+        WHERE staff_pass_id = $1;
+      `, [id])
     return { 'response': result[0].count == 1 };
   }
+
 }

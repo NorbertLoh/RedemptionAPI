@@ -4,13 +4,14 @@ dotenv.config();
 
 export const TypeORMMySqlTestingModule = (entities: any[]) =>
     TypeOrmModule.forRoot({
-        type: 'mysql',
-        host: 'localhost',
-        port: 3306,
-        username: process.env.USER,
-        password: process.env.PASSWORD,
-        database: 'gift_redemption',
+        type: 'postgres',
+        host: process.env.PGHOST,
+        port: 5432,
+        username: process.env.PGUSER,
+        password: process.env.PGPASSWORD,
+        database: process.env.PGDB,
         entities: [],
         synchronize: false,
         autoLoadEntities: true,
+        ssl: { rejectUnauthorized: false }
     });
