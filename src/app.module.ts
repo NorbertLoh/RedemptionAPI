@@ -17,17 +17,6 @@ dotenv.config();
 @Module({
   imports: [
     EventsModule,
-    // TypeOrmModule.forRoot({
-    //   type: 'mysql',
-    //   host: 'localhost',
-    //   port: 3306,
-    //   username: process.env.USER,
-    //   password: process.env.PASSWORD,
-    //   database: 'gift_redemption',
-    //   entities: [],
-    //   synchronize: false,
-    //   autoLoadEntities: true,
-    // }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.PGHOST,
