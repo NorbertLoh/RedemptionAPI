@@ -9,7 +9,6 @@
   "compilerOptions": {
     "module": "commonjs",
     "types": [
-      "node",
       "Multer"
     ], // <-- Add "Multer" here
   },
