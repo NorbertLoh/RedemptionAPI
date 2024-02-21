@@ -33,7 +33,6 @@
     "class-validator": "^0.14.1",
     "csv-parse": "^5.5.3",
     "dotenv": "^16.4.4",
-    "multer": "^1.4.5-lts.1",
     "mysql2": "^3.9.1",
     "nest": "^0.1.6",
     "nest-csv-parser": "^2.0.4",
