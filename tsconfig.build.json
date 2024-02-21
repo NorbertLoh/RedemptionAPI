@@ -10,6 +10,7 @@
     "module": "commonjs",
     "types": [
       "Multer"
-    ], // <-- Add "Multer" here
+    ],
+    "typeRoots": [ "./node_modules/@types" ]
   },
 }
