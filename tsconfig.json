@@ -16,11 +16,7 @@
     "noImplicitAny": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "types": ["Express", "Multer"],
-    "typeRoots": [
-      "node_modules/@types"
-  ]
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src/**/*",
