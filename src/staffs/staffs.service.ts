@@ -6,13 +6,19 @@ import { InjectDataSource } from '@nestjs/typeorm';
 import { readFileSync } from 'fs'
 import { Staff } from './entities/staff.entity'
 import { parse } from 'csv-parse';
-var Multer = require('multer');
+
+import { Express, Request } from 'express';
+
+// This is a hack to make Multer available in the Express namespace
+import { Multer } from 'multer';
+
+type File = Express.Multer.File;
 
 @Injectable()
 export class StaffsService {
   constructor(@InjectDataSource() private dataSource: DataSource) { }
 
-  async create(file: Express.Multer.File) {
+  async create(file: File) {
     const headers = ['staff_pass_id', 'team_name', 'created_at'];
     return new Promise((resolve, reject) => {
       parse(readFileSync(file.path), {
