@@ -8,9 +8,5 @@
   ],
   "compilerOptions": {
     "module": "commonjs",
-    "types": [
-      "Multer"
-    ],
-    "typeRoots": [ "./node_modules/@types" ]
   },
 }
