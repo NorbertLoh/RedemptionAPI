@@ -19,6 +19,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
+    "src/**/*",
     ".d.ts",   // declaration file path
   ],
 }
