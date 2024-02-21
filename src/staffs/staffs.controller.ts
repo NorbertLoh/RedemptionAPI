@@ -3,8 +3,7 @@ import { StaffsService } from './staffs.service';
 
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Express } from 'express';
-import 'multer';
+import express = require("express");
 @Controller('staffs')
 export class StaffsController {
   constructor(private readonly staffsService: StaffsService) { }
