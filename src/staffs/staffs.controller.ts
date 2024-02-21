@@ -30,7 +30,7 @@ export class StaffsController {
         new FileTypeValidator({ fileType: 'csv' }),
       ],
     }),
-  ) file: Express.Multer.File) {
+  ) file: any) {
     return this.staffsService.create(file);
   }
 

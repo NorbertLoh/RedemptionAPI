@@ -13,7 +13,7 @@ import Multer from 'multer'
 export class StaffsService {
   constructor(@InjectDataSource() private dataSource: DataSource) { }
 
-  async create(file: Express.Multer.File) {
+  async create(file: any) {
     const headers = ['staff_pass_id', 'team_name', 'created_at'];
     return new Promise((resolve, reject) => {
       parse(readFileSync(file.path), {
