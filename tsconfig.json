@@ -17,7 +17,7 @@
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["Express"]
+    "types": ["Express", "Multer"]
   },
   "include": [
     "src/**/*",
