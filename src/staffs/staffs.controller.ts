@@ -3,8 +3,7 @@ import { StaffsService } from './staffs.service';
 
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Express } from 'express';
-
+const Express = require('express');
 
 
 @Controller('staffs')
