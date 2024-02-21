@@ -4,7 +4,7 @@ import { StaffsService } from './staffs.service';
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 
-import 'multer';
+//import 'multer';
 
 
 @Controller('staffs')
