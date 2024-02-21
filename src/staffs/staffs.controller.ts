@@ -4,12 +4,8 @@ import { StaffsService } from './staffs.service';
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 
-import { Express, Request } from 'express';
+import 'multer';
 
-// This is a hack to make Multer available in the Express namespace
-import { Multer } from 'multer';
-
-type File = Express.Multer.File;
 
 @Controller('staffs')
 export class StaffsController {
@@ -35,7 +31,7 @@ export class StaffsController {
         new FileTypeValidator({ fileType: 'csv' }),
       ],
     }),
-  ) file: File) {
+  ) file: Express.Multer.File) {
     return this.staffsService.create(file);
   }
 

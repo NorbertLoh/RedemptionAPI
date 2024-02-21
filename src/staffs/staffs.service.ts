@@ -7,18 +7,13 @@ import { readFileSync } from 'fs'
 import { Staff } from './entities/staff.entity'
 import { parse } from 'csv-parse';
 
-import { Express, Request } from 'express';
-
-// This is a hack to make Multer available in the Express namespace
-import { Multer } from 'multer';
-
-type File = Express.Multer.File;
+import 'multer';
 
 @Injectable()
 export class StaffsService {
   constructor(@InjectDataSource() private dataSource: DataSource) { }
 
-  async create(file: File) {
+  async create(file: Express.Multer.File) {
     const headers = ['staff_pass_id', 'team_name', 'created_at'];
     return new Promise((resolve, reject) => {
       parse(readFileSync(file.path), {
