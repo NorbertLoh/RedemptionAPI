@@ -1,8 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RedemptionService } from './redemption.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Redemption } from "./entities/redemption.entity";
-import { DataSource } from 'typeorm';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 import { TypeORMMySqlTestingModule } from "../TestingConnectionModule";
