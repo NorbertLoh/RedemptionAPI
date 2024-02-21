@@ -3,6 +3,7 @@ import { StaffsService } from './staffs.service';
 
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
+var express = require('express');
 
 @Controller('staffs')
 export class StaffsController {
@@ -28,7 +29,7 @@ export class StaffsController {
         new FileTypeValidator({ fileType: 'csv' }),
       ],
     }),
-  ) file: any) {
+  ) file: Express.Multer.File) {
     return this.staffsService.create(file);
   }
 

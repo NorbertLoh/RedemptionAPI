@@ -6,12 +6,13 @@ import { InjectDataSource } from '@nestjs/typeorm';
 import { readFileSync } from 'fs'
 import { Staff } from './entities/staff.entity'
 import { parse } from 'csv-parse';
+var express = require('express');
 
 @Injectable()
 export class StaffsService {
   constructor(@InjectDataSource() private dataSource: DataSource) { }
 
-  async create(file: any) {
+  async create(file: Express.Multer.File) {
     const headers = ['staff_pass_id', 'team_name', 'created_at'];
     return new Promise((resolve, reject) => {
       parse(readFileSync(file.path), {
