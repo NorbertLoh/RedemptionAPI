@@ -3,12 +3,11 @@ import { StaffsService } from './staffs.service';
 
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
-const Express = require('express');
 
 
 @Controller('staffs')
 export class StaffsController {
-  constructor(private readonly staffsService: StaffsService,) { }
+  constructor(private readonly staffsService: StaffsService) { }
 
   @Post('upload')
   @ApiConsumes('multipart/form-data')
