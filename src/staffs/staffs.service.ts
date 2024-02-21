@@ -7,6 +7,9 @@ import { readFileSync } from 'fs'
 import { Staff } from './entities/staff.entity'
 import { parse } from 'csv-parse';
 
+const Express = require('express');
+const Multer = require('multer');
+
 type File = Express.Multer.File;
 
 @Injectable()

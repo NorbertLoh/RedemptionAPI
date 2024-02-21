@@ -4,6 +4,9 @@ import { StaffsService } from './staffs.service';
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 
+const Express = require('express');
+const Multer = require('multer');
+
 type File = Express.Multer.File;
 
 @Controller('staffs')
