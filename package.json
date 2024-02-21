@@ -31,6 +31,7 @@
     "csv-parse": "^5.5.3",
     "dotenv": "^16.4.4",
     "mysql2": "^3.9.1",
+    "nest": "^0.1.6",
     "nest-csv-parser": "^2.0.4",
     "papaparse": "^5.4.1",
     "pg": "^8.11.3",
