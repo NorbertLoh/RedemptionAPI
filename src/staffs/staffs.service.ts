@@ -7,12 +7,14 @@ import { readFileSync } from 'fs'
 import { Staff } from './entities/staff.entity'
 import { parse } from 'csv-parse';
 
-
+import { Express } from 'express';
+import { Multer } from 'multer';
+type File = Express.Multer.File;
 @Injectable()
 export class StaffsService {
   constructor(@InjectDataSource() private dataSource: DataSource) { }
 
-  async create(file: Express.Multer.File) {
+  async create(file: File) {
     const headers = ['staff_pass_id', 'team_name', 'created_at'];
     return new Promise((resolve, reject) => {
       parse(readFileSync(file.path), {
