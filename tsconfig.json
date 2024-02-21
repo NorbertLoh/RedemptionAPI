@@ -18,7 +18,6 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "types": ["Multer", "Express"],
-    "typeRoots": ["node_modules/@type"]
   },
   "include": [
     "src/**/*",

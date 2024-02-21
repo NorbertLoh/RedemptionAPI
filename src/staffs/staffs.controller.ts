@@ -4,11 +4,6 @@ import { StaffsService } from './staffs.service';
 import { ApiConsumes, ApiBody } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 
-const Express = require('express');
-const Multer = require('multer');
-
-type File = Express.Multer.File;
-
 @Controller('staffs')
 export class StaffsController {
   constructor(private readonly staffsService: StaffsService) { }
@@ -33,7 +28,7 @@ export class StaffsController {
         new FileTypeValidator({ fileType: 'csv' }),
       ],
     }),
-  ) file: File) {
+  ) file: File = Express.Multer.File) {
     return this.staffsService.create(file);
   }
 
