@@ -22,6 +22,11 @@
 * **Swagger**: API Documentation
 * **Database**: PostgreSQL for data storage
 
+## Assumptions
+* Staff pass ID will not be longer than 100 characters
+* Team name will not be longer than 45 characters
+* Event name will not be longer than 45 characters
+* 
 ## Motivation Behind the Design
 ### NestJS
 NestJS uses TypeScript and that allows us to write safe and robust code with early detection of possible type errors. NestJS also comes with middleware validation pipelines to intercept incoming request and apply our preprocessing logic and validation before they reach the controllers.
