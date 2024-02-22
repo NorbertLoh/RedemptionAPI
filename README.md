@@ -7,6 +7,16 @@
     <img src="https://img.shields.io/badge/PostgresSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgsqllogo" />
 </p>
 
+<p align="center">
+    <img src="./readme/website.png" alt="website" />
+    <h1 align="center"><a href="https://norbertloh.github.io/RedemptionUI/">Live Demo Here!</a>
+    </h1>
+    <p align="center">**Please Note**: This application is hosted on a free web service provider that may become idle after 15 seconds of inactivity. To ensure a smooth user experience, some redemption events have been pre-filled. If you don't see any events initially, please wait for about a minute for the server to restart. Thank you for your patience and understanding!</p>
+    
+</p>
+
+# React Frontend Client Documentation can be seen  [here](https://github.com/NorbertLoh/RedemptionUI-Source).
+
 ## Technologies Used 
 * **Backend**: NestJS for REST API
 * **Swagger**: API Documentation
