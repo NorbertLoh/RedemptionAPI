@@ -114,6 +114,46 @@ You can write similar tests by following this example.
   });
 ```
 
+## Contribution
+If you would like to add or build on top of this project, the important files are stored in the following file structure.
+```
+├── ...
+├── src
+│   ├── events
+│   │   ├── dto
+│   │   ├── entities
+│   │   ├── models
+│   │   ├── events.controller.ts
+│   │   ├── events.module.ts
+│   │   ├── events.service.spec.ts
+│   │   └── events.service.ts
+│   ├── redemption
+│   │   ├── dto
+│   │   ├── entities
+│   │   ├── redemption.controller.ts
+│   │   ├── redemption.module.ts
+│   │   ├── redemption.service.spec.ts
+│   │   └── redemption.service.ts
+│   ├── staffs
+│   │   ├── dto
+│   │   ├── entities
+│   │   ├── staffs.controller.ts
+│   │   ├── staffs.module.ts
+│   │   ├── staffs.service.spec.ts
+│   │   └── staffs.service.ts
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   ├── main.ts
+│   └── TestingConnectionModule.ts   
+└── ...
+```
+
+## Documentation
+Documentation for technologies used can be found in the following links.
+* [NestJS](https://docs.nestjs.com/)
+* [Swagger](https://swagger.io/)
+* [PostgresSQL](https://www.postgresql.org/docs/)
 <p align="center">
   <br />
   <h1 align="center">Hi There! I'm Norbert! &#128075;</h1>
