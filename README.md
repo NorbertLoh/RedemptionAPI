@@ -112,7 +112,21 @@ You can write similar tests by following this example.
     // assert
     expect(act).toEqual(assert);
   });
-
 ```
+
+<p align="center">
+  <br />
+  <h1 align="center">Hi There! I'm Norbert! &#128075;</h1>
+    <p align="center">
+      <img width="100px" src="./readme/me.png">
+    </p>
+    <p align="center">
+      <a href="https://www.linkedin.com/in/lohnorbert/"><img src="https://img.shields.io/badge/Linkedin-0A66C2?style=for-the-badge&logo=linkedin" alt="reactlogo" /></a>
+      <a href="mailto:lohnorbert@gmail.com"><img src="https://img.shields.io/badge/gmail-FAF9F6?style=for-the-badge&logo=gmail" alt="reactlogo" /></a>
+      <a href="https://norbertloh.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-grey?style=for-the-badge&logo=gnometerminal&logoColor=green" alt="reactlogo" /></a>
+  </p>
+  <p align="center">Thank you for taking your time to look through my project! Hope you enjoyed it as much as I did during the development of this project!</p>
+  <p align="center">Feel free to contact me to discuss any issues, questions or comments.</p>
+</p>
 
 
