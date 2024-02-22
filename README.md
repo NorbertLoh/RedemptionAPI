@@ -1,4 +1,4 @@
-# Redemption System
+# Redemption System Web Service
 ### This is the web service built using NestJS and  PostgresSQL for Govtech's take-home assignment.
 
 
