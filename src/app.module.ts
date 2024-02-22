@@ -1,13 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
 import { TypeOrmModule } from '@nestjs/typeorm';
-
 import * as dotenv from 'dotenv'
-
-// import
-
 import { EventsModule } from './events/events.module';
 import { StaffsModule } from './staffs/staffs.module';
 import { RedemptionModule } from './redemption/redemption.module';
@@ -19,8 +14,7 @@ dotenv.config();
     EventsModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.PGHOST,
-      port: 5432,
+      port: Number(process.env.PGPORT),
       username: process.env.PGUSER,
       password: process.env.PGPASSWORD,
       database: process.env.PGDB,

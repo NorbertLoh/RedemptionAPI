@@ -1,73 +1,118 @@
+# Redemption System
+### This is the web service built using NestJS and  PostgresSQL for Govtech's take-home assignment.
+
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+    <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="nestjslogo" />
+    <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="nestjslogo" />
+    <img src="https://img.shields.io/badge/PostgresSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgsqllogo" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Technologies Used 
+* **Backend**: NestJS for REST API
+* **Swagger**: API Documentation
+* **Database**: PostgreSQL for data storage
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+## Motivation Behind the Design
+### NestJS
+NestJS uses TypeScript and that allows for us to write safe and robust code with early detection of possible type errors. NestJS also comes with middeware validation pipelines to intercept incoming request and apply our preprocessing logic and validation before they reach the controllers.
+
+### Swagger
+Swagger allows you to describe the structure of your APIs and automatically build interative API documentation that can be used for early testing before a frontend is built.
+
+<p align="center">
+    <img width="400" src="./readme/swagger.png" alt="swagger example" />
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+### PostgresSQL
+Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Set up
+### NestJS
+If you would like to run the web service on your machine,
+1. Clone the repository
+2. Install the dependencies using `npm install`
+3. Change `.env` accordingly
+    ```
+      PGUSER=USER
+      PGPASSWORD=DB_PASSWORD
+      NODE_ENV=production
+      PGHOST=DB_HOST
+      PGDB=DB_NAME
+      PGPORT=DB_PORT
+    ```
+4. Start the web service locally using `npm run start`
 
-## Installation
+### PostgresSQL
+This is the Entity Relationship Diagram (ERD) for the project's database.
+<p align="center">
+    <img width="400" src="./readme/pgsql.png" alt="swagger example" />
+</p>
 
-```bash
-$ npm install
+If you would like to recreate the follow tables you can use the follow query
+```SQL
+CREATE DATABASE gift_redemption;
+
+CREATE TABLE events (
+  event_id SERIAL PRIMARY KEY,
+  event_name VARCHAR(45) DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT NULL
+);
+
+CREATE TABLE redemption (
+  redemption_id SERIAL PRIMARY KEY,
+  redeemed_at TIMESTAMP DEFAULT NULL,
+  team_name VARCHAR(45) DEFAULT NULL,
+  event_id INT DEFAULT NULL,
+  FOREIGN KEY (event_id) REFERENCES events(event_id)
+);
+
+CREATE TABLE staffs (
+  staff_pass_id VARCHAR(100) PRIMARY KEY,
+  team_name VARCHAR(45) DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT NULL
+);
 ```
 
-## Running the app
+## Testing
+Of course, no software will be complete without automated testing!
+We can create AAA quality tests by following the AAA principle which is, Arrange-Act-Assert.
+Each module should have their own spec file.
 
-```bash
-# development
-$ npm run start
+You can run Jest and test each service by,
+1. Running `npm test match <MODULE.SERVICE.SPEC.TS>` in the root directory
 
-# watch mode
-$ npm run start:dev
+For example,
 
-# production mode
-$ npm run start:prod
+`npm test match staffs.service.spec.ts`
+<p align="center">
+    <img width="300" src="./readme/staffspec.png" alt="swagger example">
+</p>
+
+`npm test match events.service.spec.ts`
+<p align="center">
+    <img width="300" src="./readme/eventspec.png" alt="swagger example">
+</p>
+
+`npm test match redemption.service.spec.ts`
+<p align="center">
+    <img width="300" src="./readme/redemptionspec.png" alt="swagger example">
+</p>
+
+You can write similar tests by following this example.
+```TSX
+  it('should return "redeemed successfully" if not already redeemed', async () => {
+    // arrange
+    const assert = { status: HttpStatus.CREATED, response: 'Team RUST redeemed successfully!!' };
+    const data = { event_id: 1, staff_pass_id: 'BOSS_T000000001P' };
+
+    // act
+    const act = await service.create(data);
+
+    // assert
+    expect(act).toEqual(assert);
+  });
+
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).

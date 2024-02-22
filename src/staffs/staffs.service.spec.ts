@@ -6,15 +6,13 @@ import { Express } from 'express';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { HttpStatus } from '@nestjs/common';
 import * as path from 'path';
-
 import * as fs from "fs";
-
 
 describe('StaffsService', () => {
   let service: StaffsService;
   let module: TestingModule;
+  let connection = TypeORMMySqlTestingModule([]);
 
-  let connection = TypeORMMySqlTestingModule([])
   beforeEach(async () => {
     module  = await Test.createTestingModule({
       imports: [

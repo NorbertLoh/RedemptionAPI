@@ -31,9 +31,14 @@ describe('EventsService', () => {
   });
 
   it('should create an event', async () => {
-    const createEventDto = { event_name: 'Test Event' };
+    // arrange
+    const assert = { 'status': HttpStatus.CREATED, 'response': `Event created successfully!!` };
+    const data = { event_name: 'Test Event' };
 
-    const result = await service.create(createEventDto);
-    expect(result).toEqual({ 'status': HttpStatus.CREATED, 'response': `Event created successfully!!` });
+    // act
+    const act = await service.create(data);
+
+    // assert
+    expect(act).toEqual(assert);
   });
 });
