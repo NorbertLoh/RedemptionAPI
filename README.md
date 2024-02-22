@@ -1,6 +1,5 @@
 # Redemption System Web Service
-### This is the web service built using NestJS and  PostgresSQL for Govtech's take-home assignment.
-
+### This is the web service built using NestJS and PostgresSQL for Govtech's take-home assignment.
 
 <p align="center">
     <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs" alt="nestjslogo" />
@@ -15,17 +14,17 @@
 
 ## Motivation Behind the Design
 ### NestJS
-NestJS uses TypeScript and that allows for us to write safe and robust code with early detection of possible type errors. NestJS also comes with middeware validation pipelines to intercept incoming request and apply our preprocessing logic and validation before they reach the controllers.
+NestJS uses TypeScript and that allows us to write safe and robust code with early detection of possible type errors. NestJS also comes with middleware validation pipelines to intercept incoming request and apply our preprocessing logic and validation before they reach the controllers.
 
 ### Swagger
-Swagger allows you to describe the structure of your APIs and automatically build interative API documentation that can be used for early testing before a frontend is built.
+Swagger allows you to describe the structure of your APIs and automatically build interactive API documentation that can be used for early testing before a frontend is built.
 
 <p align="center">
     <img width="400" src="./readme/swagger.png" alt="swagger example" />
 </p>
 
 ### PostgresSQL
-Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL.
+Initially I started with MySQL as it was one of the more common databases. However, I wanted to host the website so that you will be able to interact with it without having to download everything. Since, I found a free provider that allows me to host my web service with their PostgresSQL for free, I decided to move to PostgresSQL.
 
 ## Set up
 ### NestJS
@@ -33,6 +32,7 @@ If you would like to run the web service on your machine,
 1. Clone the repository
 2. Install the dependencies using `npm install`
 3. Change `.env` accordingly
+
     ```
       PGUSER=USER
       PGPASSWORD=DB_PASSWORD
@@ -49,7 +49,7 @@ This is the Entity Relationship Diagram (ERD) for the project's database.
     <img width="400" src="./readme/pgsql.png" alt="swagger example" />
 </p>
 
-If you would like to recreate the follow tables you can use the follow query
+If you would like to recreate the following tables you can use the following SQL query
 ```SQL
 CREATE DATABASE gift_redemption;
 
@@ -121,9 +121,9 @@ You can write similar tests by following this example.
       <img width="100px" src="./readme/me.png">
     </p>
     <p align="center">
-      <a href="https://www.linkedin.com/in/lohnorbert/"><img src="https://img.shields.io/badge/Linkedin-0A66C2?style=for-the-badge&logo=linkedin" alt="reactlogo" /></a>
-      <a href="mailto:lohnorbert@gmail.com"><img src="https://img.shields.io/badge/gmail-FAF9F6?style=for-the-badge&logo=gmail" alt="reactlogo" /></a>
-      <a href="https://norbertloh.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-grey?style=for-the-badge&logo=gnometerminal&logoColor=green" alt="reactlogo" /></a>
+      <a href="https://www.linkedin.com/in/lohnorbert/"><img src="https://img.shields.io/badge/Linkedin-0A66C2?style=for-the-badge&logo=linkedin" alt="linkedinlogo" /></a>
+      <a href="mailto:lohnorbert@gmail.com"><img src="https://img.shields.io/badge/gmail-FAF9F6?style=for-the-badge&logo=gmail" alt="gmaillogo" /></a>
+      <a href="https://norbertloh.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-grey?style=for-the-badge&logo=gnometerminal&logoColor=green" alt="portofliologo" /></a>
   </p>
   <p align="center">Thank you for taking your time to look through my project! Hope you enjoyed it as much as I did during the development of this project!</p>
   <p align="center">Feel free to contact me to discuss any issues, questions or comments.</p>
